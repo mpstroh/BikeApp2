@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+//This is a public class to add cruisers
+
 public class addCruiser extends AppCompatActivity {
 
     EditText cruiserBikeInput;
