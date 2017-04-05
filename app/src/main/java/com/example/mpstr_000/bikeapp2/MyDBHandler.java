@@ -23,7 +23,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_BIKES + "(" +
-                COLUMN_BIKENUMBER + " TEXT PRIMARY KEY"
+                COLUMN_BIKENUMBER + " TEXT PRIMARY KEY NOT NULL"
                 ;
         db.execSQL(query);
     }
