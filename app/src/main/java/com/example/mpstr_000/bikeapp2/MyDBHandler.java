@@ -10,10 +10,12 @@ import android.content.Context;
 import android.content.ContentValues;
 
 public class MyDBHandler extends SQLiteOpenHelper{
+
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "RentalBikes.db";
     public static final String TABLE_BIKES = "Bikes";
-    public static final String COLUMN_BIKENUMBER = "_bikeNumber";
+    public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_BIKENUMBER = "bikeNumber";
 
     //We need to pass database information along to superclass
     public MyDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -23,10 +25,12 @@ public class MyDBHandler extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_BIKES + "(" +
-                COLUMN_BIKENUMBER + " TEXT PRIMARY KEY NOT NULL"
-                ;
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_BIKENUMBER + " TEXT " +
+                ");";
         db.execSQL(query);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BIKES);
