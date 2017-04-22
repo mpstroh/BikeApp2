@@ -11,13 +11,14 @@
     tools:context="com.example.mpstr_000.bikeapp2.AddRemoveMenuActivity">
 
     <Button
-        android:text="Remove"
+        android:id="@+id/removeButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/removeButton"
-        android:layout_below="@+id/addButton2"
         android:layout_alignStart="@+id/addButton2"
-        android:layout_marginTop="77dp" />
+        android:layout_below="@+id/addButton2"
+        android:layout_marginTop="77dp"
+        android:onClick="openRemoveCruiser"
+        android:text="Remove" />
 
     <Button
         android:text="Add"

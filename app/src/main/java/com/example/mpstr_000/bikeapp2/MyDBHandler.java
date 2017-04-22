@@ -36,7 +36,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BIKES);
         onCreate(db);
     }
-
+    //not sure if it matters that I used bikeNumber in both the add and delete methods. see bucky's tutorial
     //Add a new row to the database
     public void addBike(Bikes bikeNumber){
         ContentValues values = new ContentValues();
@@ -44,6 +44,11 @@ public class MyDBHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_BIKES, null, values);
         db.close();
+    }
+
+    public void deleteBike(String bikeNumber){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_BIKES + " WHERE " + COLUMN_BIKENUMBER + "=\"" + bikeNumber + "\";");
     }
 
     public String databaseToString(){

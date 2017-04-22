@@ -18,7 +18,8 @@
         <activity android:name=".CruiserBikesHome" />
         <activity android:name=".AddRemoveMenuActivity" />
         <activity android:name=".addCruiser" />
-        <activity android:name=".CruiserBikeLogs"></activity>
+        <activity android:name=".CruiserBikeLogs" />
+        <activity android:name=".RemoveCruiser"></activity>
     </application>
 
 </manifest>

@@ -20,4 +20,9 @@ public class AddRemoveMenuActivity extends AppCompatActivity {
         Intent showAddCruiser = new Intent(this, addCruiser.class);
         startActivity(showAddCruiser);
     }
+
+    public void openRemoveCruiser(View view) {
+        Intent showRemoveCruiser = new Intent(this, RemoveCruiser.class);
+        startActivity(showRemoveCruiser);
+    }
 }
